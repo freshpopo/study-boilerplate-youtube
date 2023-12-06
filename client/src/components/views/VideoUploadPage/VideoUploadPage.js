@@ -12,20 +12,20 @@ function VideoUploadPage () {
       </div>
       <Form onSubmit>
         <div style={{ display: 'flex', justifyContent: 'space-between'}}>
-          {/* TODO : Dropzone 버전 다운 후 재시도 */}
           {/* Drop Zone */}
-          {/*<Dropzone*/}
-          {/*  onDrop*/}
-          {/*  multiple*/}
-          {/*>*/}
-          {/*  maxSize{({ getRootProps, getInputProps}) => (*/}
-          {/*    <div style={{ width: '300px', height: '240px', border: '1px solid lightgray', alignItems: 'center', justifyContent: 'center' }} {...getRootProps()}>*/}
-          {/*      <input {...getInputProps()}/>*/}
-          {/*      <Icon type="plus" style={{ fontSize: '3rem' }}></Icon>*/}
-          {/*    </div>*/}
-          {/*)}*/}
-          {/*</Dropzone>*/}
-          {/* Thumbnail */}
+          <Dropzone
+            onDrop
+            multiple
+            maxSize
+          >
+            {({ getRootProps, getInputProps}) => (
+              <div style={{ display: 'flex', width: '300px', height: '240px', border: '1px solid lightgray', alignItems: 'center', justifyContent: 'center' }} {...getRootProps()}>
+                <input {...getInputProps()}/>
+                <Icon type="plus" style={{ fontSize: '3rem' }}></Icon>
+              </div>
+          )}
+          </Dropzone>
+           Thumbnail
           <div>
             <img src="" alt=""/>
           </div>
