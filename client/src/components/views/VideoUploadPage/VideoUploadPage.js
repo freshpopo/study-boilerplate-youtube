@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Typography, Button, Form, message, Input, Icon} from "antd";
 import Dropzone from "react-dropzone";
+import Axios from "axios";
 
 const { Title } = Typography;
 const { TextArea } = Input;
@@ -46,7 +47,7 @@ function VideoUploadPage () {
     Axios.post('/api/video/uploadfiles', formData, config)
       .then(response => {
         if (response.data.success) {
-
+          console.log(response.data);
         } else {
           alert('비디오 업로드를 실패했습니다.')
         }
